@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <hta:application 
+            id = "naptimeapp"
+            applicationname = "Naptime"
+            scroll = "yes"
+            singleinstance = "yes"
+            icon = "./assets/icons/app-icon.ico">
+
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=9">
+        <!--<meta http-equiv="x-ua-compatible" content="ie=edge" />-->
+
+        <link rel="stylesheet" href="styles/style.css">
+        <script type="text/vbscript" src="scripts/main-script.vbs"></script>
+        <script src="scripts/main-script.js"></script>
+        
+        <Title>Naptime</Title>
+
+    </head>
+
+    <body>
+        <p id="debugP"></p>
+
+        <div id = "quickTimeSelectMenu">
+            <button class="button quick_time_button" onclick=RunAction(0.16)>10min</button>
+            <button class="button quick_time_button" onclick=RunAction(0.5)>30min</button>
+            <button class="button quick_time_button" onclick=RunAction(1)>1h</button>
+            <button class="button quick_time_button" onclick=RunAction(1.5)>1.5h</button>
+            <button class="button quick_time_button" onclick=RunAction(2)>2h</button>
+            <button class="button cancel_button" onclick=CancelAction()>Cancel</button>
+        </div>
+
+        <hr />
+
+        <div id="appMenusContainer">
+
+            <div class="menu" id="customTimeInputMenu">
+                <p class="menu-title">Custom time:</p>
+                <div>
+                    <input class="text_input" id="hoursInput" type="number" name="hours" onclick="clearTextInput(this.id)">
+                    <label>h</label>
+                    <input class="text_input" id="minutesInput" type="number" name="minutes" onclick="clearTextInput(this.id)">
+                    <label>min</label>
+                    <button class="button" onclick="SetCustomTime()">Ok</button>
+                </div>
+            </div>
+
+            <div class="menu" id="actionMenu">
+                <p class="menu-title">Action:</p>
+                <form>
+                    <input type="radio" id="radio_shutdown" name="app_action" value="shutdown" checked>
+                    <label for="radio_shutdown">Shutdown</label><br>
+                    <input type="radio" id="radio_sleep" name="app_action" value="sleep">
+                    <label for="radio_sleep">Sleep</label><br>
+                </form> 
+            </div>
+
+            <div class="menu" id="brightnessMenu">
+                <p class="menu-title">Brightness:</p>
+                <input type="checkbox" id="checkbox_brightness" name="control_brightness" value="brightness" checked>
+                <label>Adjust brightness</label>
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

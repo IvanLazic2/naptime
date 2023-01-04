@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*
+{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    vertical-align: top;
+}
+
+.button
+{
+    background-color: #3786c4;
+    color: white;
+    border: 1px solid #969696;
+    border-radius: 5px;
+}
+
+.quick_time_button
+{
+    width: 80px;
+    padding: 7px;
+    margin: 10px;
+}
+
+.menu
+{
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    
+
+    border: 1px solid #969696;
+    border-radius: 5px;
+}
+
+.menu-title
+{
+    font-weight: bold;
+}
+
+.cancel_button
+{
+    background-color: #cf3c3c;
+    width: 80px;
+    padding: 7px;
+    margin: 10px;
+}
+
+#appMenusContainer
+{
+    vertical-align: top;
+}
+
+#quickTimeSelectMenu
+{
+    display: inline-block;
+    padding: 5px;
+
+    /*display: flex;
+    justify-content: center;*/
+}
+
+.text_input
+{
+    width: 50px;
+    padding: 2px;
+    margin: 0px;
+    border: 1px solid #969696;
+    border-radius: 5px;
+    text-align:center;
+}
+
+#customTimeInputMenu
+{
+    
+}
+
+#customTimeInputMenu label
+{
+    margin-right: 10px;
+}
