@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="../styles/style.css">
+
+        <script src="../scripts/JScript-extended.js"></script>
+        <script src="../scripts/main-script.js"></script>
+        <script src="../scripts/countdown-picker.js"></script>
+        <script src="../scripts/time-picker.js"></script>
+        <script src="../scripts/brightness.js"></script>
+        <script src="../scripts/user-settings.js"></script>
+        
+        <Title>Naptime</Title>
+
+    </head>
+
+    <body>
+        <p id="debugP"></p>
+
+        <div class="flex-container">
+
+
+            <div class="main-content">
+                
+                <div id = "quickTimeSelectMenu">
+                    <button class="button quick-time-button" onclick=RunAction(0.16)>🕐 10min</button>
+                    <button class="button quick-time-button" onclick=RunAction(0.5)>🕒 30min</button>
+                    <button class="button quick-time-button" onclick=RunAction(1)>🕕 1h</button>
+                    <button class="button quick-time-button" onclick=RunAction(1.5)>🕘 1.5h</button>
+                    <button class="button quick-time-button" onclick=RunAction(2)>🕚 2h</button>
+                    <button class="button cancel-button" onclick=CancelAction()>❌ Cancel</button>
+                </div>
+
+                <hr />
+
+                <div class="menus">
+
+
+                    <div class="menu" id="customCountdownPickerMenu">
+                        <p class="menu-title">Custom countdown:</p>
+                        <div class="menu-content">
+                            <input class="text-input" id="countdownInputHours" type="text" minlength="1" maxlength="5" inputmode="numeric" pattern="[0-9]*" name="hours" onclick="SelectTextInput(this.id)" onblur="WriteCountdownHours()">
+                            <label>h</label>
+                            <input class="text-input" id="countdownInputMinutes" type="text" minlength="2" maxlength="2" inputmode="numeric" pattern="[0-9]*" name="minutes" onclick="SelectTextInput(this.id)" onblur="WriteCountdownMinutes()">
+                            <label>min</label>
+                            
+                        </div>
+                        <div class="menu-footer">
+                            <button class="button small-button ok-button" onclick="SetCountdown()">✔ Ok</button>
+                            <button class="button small-button cancel-button" onclick="CancelAction()">❌ Cancel</button>
+                        </div>
+                    </div>
+    
+                    <div class="menu" id="timePickerMenu">
+                        <p class="menu-title">Custom time:</p>
+                        <div class="menu-content" id="timePickerContent">
+                            <input class="text-input" id="timeInputHours" type="text" minlength="2" maxlength="2" name="hours" onclick="SelectTextInput(this.id)" onblur="WriteTimeHours()">
+                            <label>:</label>
+                            <input class="text-input" id="timeInputMinutes" type="text" minlength="2" maxlength="2" name="minutes" onclick="SelectTextInput(this.id)" onblur="WriteTimeMinutes()">
+                            
+                            <div id="dayContainer">
+                                <label class="day-label" id="Monday" onclick="CheckDay(this.id); WriteSettings()">M</label>
+                                <label class="day-label" id="Tuesday" onclick="CheckDay(this.id); WriteSettings()">T</label>
+                                <label class="day-label" id="Wednesday" onclick="CheckDay(this.id); WriteSettings()">W</label>
+                                <label class="day-label" id="Thursday" onclick="CheckDay(this.id); WriteSettings()">T</label>
+                                <label class="day-label" id="Friday" onclick="CheckDay(this.id); WriteSettings()">F</label>
+                                <label class="day-label" id="Saturday" onclick="CheckDay(this.id); WriteSettings()">S</label>
+                                <label class="day-label" id="Sunday" onclick="CheckDay(this.id); WriteSettings()">S</label>
+                            </div>
+    
+                        </div>
+                        <div class="menu-footer">
+                            <button class="button small-button ok-button" onclick="SetTime()">✔ Ok</button>
+                            <button class="button small-button cancel-button" onclick="DeleteTask()">❌ Cancel</button>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                
+
+            </div>
+
+
+            <div class="sidebar">
+
+
+                <div class="settings-submenu" id="actionMenu">
+                    <p class="menu-title">Action:</p>
+                    <div class="menu-content">
+                        <form>
+                            <input type="radio" id="radioShutdown" name="app_action" value="shutdown" onclick="WriteActionShutdown()">
+                            <label for="radioShutdown">Shutdown</label><br>
+                            <input type="radio" id="radioSleep" name="app_action" value="sleep" onclick="WriteActionSleep()">
+                            <label for="radioSleep">Sleep</label><br>
+                        </form> 
+                    </div>
+                    <div class="menu-footer">
+
+                    </div>
+                </div>
+    
+                <div class="settings-submenu" id="brightnessMenu">
+                    <p class="menu-title">Brightness:</p>
+                    <div class="menu-content">
+                        <input type="checkbox" id="checkboxBrightness" name="control_brightness" value="brightness" onclick="WriteBrightness()">
+                        <label>Adjust brightness</label>
+                    </div>
+                    <div class="menu-footer">
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </body>
+
+</html>

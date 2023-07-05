@@ -7,26 +7,94 @@
     vertical-align: top;
 }
 
-.button
+html 
 {
-    background-color: #3786c4;
-    color: white;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+hr
+{
+    width: calc(100% - 20px);
+    margin: 0;
+}
+
+/* TEMPLATE */
+.flex-container
+{
+    display: flex;
+}
+
+.main-content
+{
+    flex: 3;
+
+}
+
+.sidebar
+{
+    flex: 1;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.settings-submenu
+{
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+
+    
+
     border: 1px solid #969696;
     border-radius: 5px;
 }
 
-.quick_time_button
+.button
 {
-    width: 80px;
-    padding: 7px;
-    margin: 10px;
+    padding: 6px;
+    margin: 5px;
+    
+    border-radius: 5px;
+    border: 1px solid #969696;
 }
+
+.quick-time-button
+{
+    background-color: #3786c4;
+    color: white;
+
+    width: 100px;
+    
+}
+
+.cancel-button
+{
+    background-color: #cf3c3c;
+    color: white;
+}
+
+.small-button
+{
+    font-size: 12px;
+}
+
+
 
 .menu
 {
-    display: inline-block;
-    margin: 10px;
+    display: flex;
+    flex-direction: column;
     padding: 10px;
+    margin: 5px;
+    height: 150px;
+    width: 33%;
+
     
 
     border: 1px solid #969696;
@@ -35,47 +103,96 @@
 
 .menu-title
 {
+    /*background-color: red;*/
+    margin: 0;
     font-weight: bold;
 }
 
-.cancel_button
+.menu-content
 {
-    background-color: #cf3c3c;
-    width: 80px;
-    padding: 7px;
-    margin: 10px;
+    /*background-color: green;*/
+
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
-#appMenusContainer
+.menu-footer
 {
-    vertical-align: top;
+    /*background-color: blue;*/
+
+    margin-top: auto;
+}
+
+
+
+.menus
+{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
 }
 
 #quickTimeSelectMenu
 {
-    display: inline-block;
-    padding: 5px;
+    /*display: inline-block;*/
+    padding: 10px;
 
-    /*display: flex;
-    justify-content: center;*/
+    display: flex;
+    /*justify-content: center;*/
 }
 
-.text_input
+.button:last-of-type {
+    margin-left: auto;
+  }
+
+.text-input
 {
     width: 50px;
     padding: 2px;
-    margin: 0px;
+    margin: 5px;
     border: 1px solid #969696;
     border-radius: 5px;
     text-align:center;
 }
 
-#customTimeInputMenu
+#customCountdownPickerMenu
 {
-    
 }
 
-#customTimeInputMenu label
+#customCountdownPickerMenu label
 {
     margin-right: 10px;
+}
+
+/* TIME PICKER */
+
+.day-label
+{
+    color: black;
+    cursor: pointer;
+}
+
+.checked
+{
+    color: #3786c4;
+}
+
+#timePickerMenu
+{
+    margin: 5px 0 15px 15px;
+}
+
+#timePickerContent
+{
+    display: flex;
+    flex-direction: row;
+}
+
+#dayContainer
+{
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    cursor: default;
 }
